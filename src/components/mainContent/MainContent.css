@@ -11,9 +11,9 @@
 }
 
 .main .main__content h3 {
-    background-color: rgb(255, 0, 0);
-    width: fit-content;
-    padding: 10px;
+  background-color: rgb(255, 0, 0);
+  width: fit-content;
+  padding: 10px;
 }
 
 .main__content__menu-container {
@@ -33,6 +33,7 @@
   width: 280px;
   height: 280px;
   background-color: lightcyan;
+  box-shadow: 0 0 6px gray;
 }
 
 .main__content__menu-container-card img {
@@ -57,5 +58,56 @@
   text-align: end;
   margin: 3px 0;
   color: red;
+  font-weight: bolder;
+}
+
+.main__content__aboutUs-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.main__content__aboutUs-container .main__content__aboutUs-container__info {
+  display: flex;
+  align-items: center;
+  padding: 30px;
+  background-color: rgb(255, 145, 161);
+  width: 100%;
+  box-shadow: 0 0 6px rgb(230, 14, 50);
+}
+
+.main__content__aboutUs-container .main__content__aboutUs-container__info p {
+  font-size: 21px;
+  width: 70%;
+  padding: 10px;
+  text-align: justify;
+}
+
+.main__content__aboutUs-container .main__content__aboutUs-container__info img {
+  width: 20%;
+  border-radius: 100%;
+  margin-left: 100px;
+}
+
+#reservationButton {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: black;
+  padding: 2px 4px;
+  width: fit-content;
+}
+
+#reservationButton i {
+  font-size: 26px;
+  color: red;
+}
+
+#reservationButton p {
+  transition: all 0.3s ease;
+}
+
+#reservationButton p:hover {
   font-weight: bolder;
 }

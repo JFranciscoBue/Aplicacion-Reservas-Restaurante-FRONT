@@ -6,7 +6,10 @@ const Header = () => {
   return (
     <header className="header">
       <div className="header__logo">
-        <i class="bx bx-restaurant"></i>
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/1996/1996055.png"
+          alt=""
+        />
         <h1>Lounge & Food Restorant</h1>
       </div>
       <nav className="header__navbar">

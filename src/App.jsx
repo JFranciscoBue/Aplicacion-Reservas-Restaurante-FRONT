@@ -4,7 +4,6 @@ import RegisterAdmin from "./components/admin/forms/RegisterAdmin";
 import LoginAdmin from "./components/admin/forms/LoginAdmin";
 import Dashboard from "./components/admin/Dashboard";
 import Reservations from "./components/admin/reservations/Reservations";
-import Header from "./components/navbar/Header";
 import MainPage from "./views/clients/MainPage";
 
 function App() {

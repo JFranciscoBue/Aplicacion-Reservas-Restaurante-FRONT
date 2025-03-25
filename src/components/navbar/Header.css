@@ -15,12 +15,13 @@
   padding: 5px;
 }
 
-.header__logo i {
-  font-size: 43px;
+.header__logo img {
+  width: 75px;
+  height: 75px;
 }
 
 .header__navbar-button {
-  background-color: rgb(247, 62, 62);
+  background-color: rgb(226, 24, 24);
   padding: 5px 10px;
   border-radius: 15px;
   color: black;

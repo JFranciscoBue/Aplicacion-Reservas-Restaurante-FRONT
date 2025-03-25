@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "./MainContent.css";
+import { Link } from "react-router-dom";
 
 const MainContent = () => {
   const [menu, setMenu] = useState([
-    // ENTRADAS
     {
       categoria: "Entradas",
       nombre: "Bruschetta Italiana",
@@ -33,7 +33,6 @@ const MainContent = () => {
       precio: 9.5,
     },
 
-    // PLATOS PRINCIPALES
     {
       categoria: "Platos Principales",
       nombre: "Milanesa Napolitana con Papas",
@@ -77,7 +76,6 @@ const MainContent = () => {
       precio: 16.0,
     },
 
-    // POSTRES
     {
       categoria: "Postres",
       nombre: "Tiramisú",
@@ -107,7 +105,6 @@ const MainContent = () => {
       precio: 7.5,
     },
 
-    // BEBIDAS
     {
       categoria: "Bebidas",
       nombre: "Coca-Cola 500ml",
@@ -164,6 +161,35 @@ const MainContent = () => {
               </div>
             );
           })}
+        </div>
+        <div className="main__content__aboutUs-container">
+          <h3>Sobre Nosotros</h3>
+          <div className="main__content__aboutUs-container__info">
+            <p>
+              Bienvenidos a Lounge & Food Restaurant, un espacio donde la
+              gastronomía de alta calidad se encuentra con un ambiente acogedor
+              y sofisticado. 🍷✨ Desde el primer día, nos propusimos ofrecer
+              una experiencia culinaria única, combinando ingredientes frescos,
+              recetas innovadoras y un servicio excepcional. Nuestro menú está
+              diseñado para sorprender cada paladar, desde exquisitas entradas y
+              platos principales cuidadosamente preparados, hasta postres
+              irresistibles y una selección de bebidas premium. Ya sea que
+              busques una cena íntima, una reunión con amigos o un lugar para
+              relajarte y disfrutar de buena música, en Lounge & Food Restaurant
+              encontrarás el equilibrio perfecto entre sabor, confort y
+              exclusividad. 🥂 Te invitamos a descubrir un lugar donde cada
+              plato cuenta una historia y cada visita se convierte en un momento
+              inolvidable. ¡Te esperamos! 🍽️🔥
+            </p>
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/1996/1996055.png"
+              alt="Restorant"
+            />
+          </div>
+          <Link to="new-reservation" id="reservationButton">
+            <i class="bx bxs-hand-right"></i>
+            <p>¡Reserva tu mesa ahora y vive una experiencia inolvidable!</p>
+          </Link>
         </div>
       </div>
     </main>
