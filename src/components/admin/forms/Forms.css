@@ -1,0 +1,52 @@
+.form {
+  background-color: lightsalmon;
+  width: fit-content;
+  justify-self: center;
+  margin-top: 110px;
+  padding: 20px;
+  border-radius: 20px;
+  border: 2px solid orange;
+  box-shadow: 0 2px 0 orange;
+}
+
+.form h2 {
+  font-size: 30px;
+  margin-bottom: 3px;
+}
+
+.form p {
+  font-size: 21px;
+  font-weight: 300;
+  margin-bottom: 3px;
+}
+
+.form .form__field {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  margin: 10px;
+}
+
+.form .form__field input {
+  padding: 5px 10px;
+  border: none;
+  outline: none;
+}
+
+.form .form__field input:focus {
+  border: 2px solid rgb(155, 103, 5);
+}
+
+.form .form__field input[type="submit"] {
+  background-color: lightcoral;
+  font-weight: bolder;
+  font-size: 12px;
+  width: 100%;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.form .form__field input[type="submit"]:hover {
+  border: none;
+  background-color: rgb(230, 91, 91);
+}
