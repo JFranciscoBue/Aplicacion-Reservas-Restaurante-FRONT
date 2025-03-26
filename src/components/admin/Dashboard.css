@@ -6,7 +6,8 @@
 }
 
 #editProfileButton,
-#allReservationsButton {
+#allReservationsButton,
+#LogOutButton {
   margin: 10px;
   padding: 6px;
   background-color: rgb(247, 62, 62);
@@ -22,7 +23,8 @@
 }
 
 #editProfileButton:hover,
-#allReservationsButton:hover {
+#allReservationsButton:hover,
+#LogOutButton:hover {
   background-color: rgb(255, 0, 0);
 }
 

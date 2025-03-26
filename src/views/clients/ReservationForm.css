@@ -1,0 +1,91 @@
+.reservationForm-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.reservationForm-container h2 {
+  font-size: 45px;
+  color: black;
+  font-weight: bolder;
+  padding-bottom: 3px;
+  border-bottom: 1px solid red;
+}
+
+.reservationForm-container__head {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.reservationForm-container__head img {
+    width: 100px;
+    height: 100px;
+}
+
+.reservationForm {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin: 30px;
+  background-color: rgb(241, 137, 155);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgb(248, 110, 248);
+}
+
+.reservationForm h3 {
+  font-size: 23px;
+}
+
+.reservationForm .reservationForm__field {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+  width: 55%;
+}
+
+.reservationForm__field label {
+  margin-bottom: 5px;
+  font-size: 21px;
+  font-weight: bolder;
+  color: rgb(245, 19, 53);
+}
+
+.reservationForm__field input {
+  padding: 5px 10px;
+  border: none;
+  border-bottom: 1px solid rgb(128, 0, 255);
+  outline: none;
+  background-color: pink;
+  font-weight: bolder;
+  transition: all 0.4s ease;
+}
+
+.reservationForm__field input:hover {
+    background-color: rgb(241, 134, 152);
+}
+
+
+.reservationForm__field input:focus {
+    border: 1px solid purple;
+}
+
+#reservationButton {
+    margin-top: 10px;
+    background-color: pink;
+    color: red;
+    border: none;
+    border-radius: 20px;
+    font-weight: bolder;
+    padding: 5px 10px;
+    font-size: 21px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+#reservationButton:hover {
+    background-color: rgb(255, 161, 177);
+}

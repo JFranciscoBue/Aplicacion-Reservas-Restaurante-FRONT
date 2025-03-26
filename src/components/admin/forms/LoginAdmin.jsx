@@ -1,5 +1,7 @@
-import React from "react";
-import { useState } from "react";
+import React, { useContext } from "react";
+import { useState, useEffect } from "react";
+import { AdminContext } from "../../../context/AdminContext";
+import { useNavigate } from "react-router-dom";
 import "./Forms.css";
 
 const LoginAdmin = () => {
@@ -7,6 +9,16 @@ const LoginAdmin = () => {
     dni: "",
     key: "",
   });
+
+  const navigation = useNavigate();
+
+  const { adminData } = useContext(AdminContext);
+
+  useEffect(() => {
+    if (Object.keys(adminData).length > 0) {
+      navigation("/admin/dashboard");
+    }
+  }, [adminData, navigation]);
 
   const inputChange = (e) => {
     const { name, value } = e.target;

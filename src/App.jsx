@@ -1,21 +1,26 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import RegisterAdmin from "./components/admin/forms/RegisterAdmin";
 import LoginAdmin from "./components/admin/forms/LoginAdmin";
 import Dashboard from "./components/admin/Dashboard";
 import Reservations from "./components/admin/reservations/Reservations";
 import MainPage from "./views/clients/MainPage";
+import ReservationForm from "./views/clients/ReservationForm";
+import RegisterForm from "./views/admin/RegisterForm";
+import { AdminProvider } from "./context/AdminContext";
 
 function App() {
   return (
     <>
-      <Routes>
-        <Route path="/" element={<MainPage />} />
-        <Route path="/admin/register" element={<RegisterAdmin />} />
-        <Route path="/admin/login" element={<LoginAdmin />} />
-        <Route path="/admin/dashboard" element={<Dashboard />} />
-        <Route path="/reservations" element={<Reservations />} />
-      </Routes>
+      <AdminProvider>
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/admin/register" element={<RegisterForm />} />
+          <Route path="/admin/login" element={<LoginAdmin />} />
+          <Route path="/admin/dashboard" element={<Dashboard />} />
+          <Route path="/reservations" element={<Reservations />} />
+          <Route path="/new-reservation" element={<ReservationForm />} />
+        </Routes>
+      </AdminProvider>
     </>
   );
 }
