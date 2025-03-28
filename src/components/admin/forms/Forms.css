@@ -27,6 +27,13 @@
   margin: 10px;
 }
 
+.form .form__field label > p {
+  color: red;
+  font-weight: bolder;
+  width: 100%;
+  font-size: 10px;
+}
+
 .form .form__field input {
   padding: 5px 10px;
   border: none;

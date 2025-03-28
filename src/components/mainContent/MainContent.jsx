@@ -1,5 +1,5 @@
-import React, { useState } from "react";
 import "./MainContent.css";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const MainContent = () => {
@@ -145,6 +145,19 @@ const MainContent = () => {
   return (
     <main className="main">
       <h2>Bienvenido a la web oficial de Lounge & Food Restorant</h2>
+      <div className="main__iamges">
+        <h3>Nuestro local</h3>
+        <div className="main__images-items">
+          <img
+            src="https://www.abasturhub.com/img/blog/interiorismo-restaurantero---interiorismo-restaurantero.jpg"
+            alt="Restaurante"
+          />
+          <img
+            src="https://yucatantoday.com/hubfs/Imported_Blog_Media/Restaurante-Cuna-by-Wayam-Mundo-Imperial-CUNA_Lavalle-Peniche-Arquitectos-20-sin-logo-1.jpeg"
+            alt=""
+          />
+        </div>
+      </div>
       <div className="main__content">
         <h3>Nuestro menú</h3>
         <div className="main__content__menu-container">

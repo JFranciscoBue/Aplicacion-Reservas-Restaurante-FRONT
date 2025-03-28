@@ -4,13 +4,39 @@
   margin-top: 20px;
 }
 
+.main .main__iamges {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  gap: 20px;
+}
+
+.main .main__iamges .main__images-items {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-evenly;
+  background-color: rgb(255, 145, 161);
+  border-radius: 45px;
+  padding: 5px 0;
+}
+
+.main__images-items img {
+  width: 400px;
+  height: 400px;
+  border-radius: 30px;
+  margin: 40px 0;
+  box-shadow: 0 0 10px red;
+}
+
 .main .main__content {
   display: flex;
   flex-direction: column;
   margin: 20px;
 }
 
-.main .main__content h3 {
+.main .main__content h3,
+.main .main__iamges h3 {
   background-color: rgb(255, 0, 0);
   width: fit-content;
   padding: 10px;

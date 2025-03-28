@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 import { useState, useEffect } from "react";
 import { AdminContext } from "../../../context/AdminContext";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import formValidation from "../../../helpers/forms/adminLogin";
 import "./Forms.css";
 
 const LoginAdmin = () => {
@@ -10,9 +12,14 @@ const LoginAdmin = () => {
     key: "",
   });
 
+  const [errors, setErrors] = useState({});
+  const [validCreds, setValidCreds] = useState("");
+
+  const API = "http://localhost:3000";
+
   const navigation = useNavigate();
 
-  const { adminData } = useContext(AdminContext);
+  const { adminData, setAdminData } = useContext(AdminContext);
 
   useEffect(() => {
     if (Object.keys(adminData).length > 0) {
@@ -31,17 +38,40 @@ const LoginAdmin = () => {
 
   const formSubmit = (e) => {
     e.preventDefault();
+    setValidCreds("");
 
-    console.log(formData);
-    alert("Formulario Creado");
+    const validations = formValidation(formData);
+
+    if (Object.keys(validations).length > 0) {
+      setErrors(validations);
+      return;
+    } else {
+      setErrors({});
+      axios
+        .post(`${API}/auth/login`, formData)
+        .then((res) => {
+          if (res.status === 200) {
+            console.log(res.data);
+            setAdminData(res.data.adminFound);
+          }
+        })
+        .catch((e) => {
+          setValidCreds(e.response.data.message);
+        });
+    }
   };
 
   return (
     <form onSubmit={formSubmit} className="form">
       <h2>Acceder</h2>
+      {validCreds && <p>Dni o Clave Incorrectos</p>}
       <p>Entra a tu dashboard</p>
       <div className="form__field loginInput">
-        <label htmlFor="name"></label>
+        <label htmlFor="dni">
+          {errors.dni && (
+            <p className="errorMessage">El DNI debe ser de 8 digitos</p>
+          )}
+        </label>
         <input
           type="text"
           name="dni"
@@ -51,7 +81,11 @@ const LoginAdmin = () => {
         />
       </div>
       <div className="form__field loginInput">
-        <label htmlFor="name"></label>
+        <label htmlFor="dni">
+          {errors.key && (
+            <p className="errorMessage">Por favor ingresa la clave</p>
+          )}
+        </label>
         <input
           type="password"
           name="key"
