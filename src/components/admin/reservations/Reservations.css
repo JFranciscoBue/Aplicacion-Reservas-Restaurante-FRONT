@@ -1,0 +1,52 @@
+.reservationsDashboardContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  width: fit-content;
+  align-items: start;
+  background-color: lightsalmon;
+  border-radius: 20px;
+}
+
+.reservationsDashboardContainer h2 {
+  margin: 20px;
+  font-size: 32px;
+}
+
+.reservationsDashboardContainer__filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 2px;
+  width: fit-content;
+  margin-left: 20px;
+  border-bottom: 1px solid black;
+}
+
+.reservationsDashboardContainer__filters label {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.reservationsDashboardContainer__filters select {
+  padding: 10px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+}
+
+.reservationsDashboardContainer__filters button,
+dialog > button {
+  margin: 10px 5px;
+  padding: 10px;
+  background-color: lightcoral;
+  border: 1px solid #ddd;
+  font-weight: bolder;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.reservationsDashboardContainer__filters button:hover,
+dialog > button:hover {
+  background-color: rgb(252, 104, 104);
+}

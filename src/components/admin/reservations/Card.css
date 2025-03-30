@@ -1,0 +1,36 @@
+.reservationTable {
+  width: 95%;
+  margin: 20px 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+}
+
+.reservationTable table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.reservationTable th,
+.reservationTable td {
+  padding: 15px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.reservationTable th {
+  background-color: #f0f0f0;
+}
+
+.reservationTable tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+#showStatus {
+  margin: 10px 5px;
+  padding: 10px;
+  background-color: lightcoral;
+  border: 1px solid #ddd;
+  font-weight: bolder;
+  font-size: 10px;
+  width: 25%;
+}

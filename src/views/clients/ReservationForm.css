@@ -13,15 +13,26 @@
   border-bottom: 1px solid red;
 }
 
+.reservationForm-container .reservationForm-container__calendarImg {
+  width: 40%;
+}
+
 .reservationForm-container__head {
-    display: flex;
-    align-items: center;
-    gap: 30px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
 }
 
 .reservationForm-container__head img {
-    width: 100px;
-    height: 100px;
+  width: 100px;
+  height: 100px;
+}
+
+.reservationForm-container__body {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
 }
 
 .reservationForm {
@@ -29,6 +40,7 @@
   flex-direction: column;
   align-items: start;
   margin: 30px;
+  width: 60%;
   background-color: rgb(241, 137, 155);
   padding: 20px;
   border-radius: 15px;
@@ -64,28 +76,27 @@
 }
 
 .reservationForm__field input:hover {
-    background-color: rgb(241, 134, 152);
+  background-color: rgb(241, 134, 152);
 }
 
-
 .reservationForm__field input:focus {
-    border: 1px solid purple;
+  border: 1px solid purple;
 }
 
 #reservationButton {
-    margin-top: 10px;
-    background-color: pink;
-    color: red;
-    border: none;
-    border-radius: 20px;
-    font-weight: bolder;
-    padding: 5px 10px;
-    font-size: 21px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+  margin-top: 10px;
+  background-color: pink;
+  color: red;
+  border: none;
+  border-radius: 20px;
+  font-weight: bolder;
+  padding: 5px 10px;
+  font-size: 21px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
-
 
 #reservationButton:hover {
-    background-color: rgb(255, 161, 177);
+  background-color: rgb(255, 161, 177);
 }
+
