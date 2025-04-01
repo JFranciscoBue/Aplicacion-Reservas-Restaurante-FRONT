@@ -27,10 +27,37 @@
 
 #showStatus {
   margin: 10px 5px;
-  padding: 10px;
+  padding: 5px 8px;
   background-color: lightcoral;
   border: 1px solid #ddd;
   font-weight: bolder;
-  font-size: 10px;
-  width: 25%;
+  font-size: 17px;
+  width: fit-content;
+}
+
+.reservationTable__reservationStatus {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+
+.reservationTable__reservationStatus button {
+  border: none;
+  background-color: lightcoral;
+  border-radius: 20px;
+  margin: 3px 0;
+  padding: 5px 0;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.reservationTable__reservationStatus button:hover {
+  background-color: rgb(247, 95, 95);
+  font-weight: bolder;
+}
+
+#statusChangedMessage {
+  margin: 5px 10px;
+  font-weight: bolder;
+  font-size: 17px;
 }

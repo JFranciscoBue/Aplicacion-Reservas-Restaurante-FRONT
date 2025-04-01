@@ -1,7 +1,15 @@
-import { useState } from "react";
 import "./Card.css";
 
-const Card = ({ id, date, time, num_comensales, status }) => {
+const Card = ({
+  id,
+  date,
+  time,
+  num_comensales,
+  status,
+  finished,
+  cancelled,
+  newStatus,
+}) => {
   return (
     <div className="reservationTable">
       <table>
@@ -23,7 +31,10 @@ const Card = ({ id, date, time, num_comensales, status }) => {
         </tbody>
       </table>
       <div className="reservationTable__reservationStatus">
-        <p id="showStatus">ESTADO DE LA RESERVA PAPU</p>
+        <p id="showStatus">Estado: {status}</p>
+        {newStatus && <p id="statusChangedMessage">Estado cambiado!</p>}
+        <button onClick={() => finished(id)}>✅ Finalizada</button>
+        <button onClick={() => cancelled(id)}>❌ Cancelada</button>
       </div>
     </div>
   );

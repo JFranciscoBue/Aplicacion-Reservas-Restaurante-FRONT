@@ -50,3 +50,9 @@ dialog > button {
 dialog > button:hover {
   background-color: rgb(252, 104, 104);
 }
+
+#notReservationsMessage {
+  margin: 10px 20px;
+  font-size: 25px;
+  font-weight: bolder;
+}

@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Footer from "../../components/footer/Footer";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import reservationsFormValidator from "../../helpers/forms/reservation";
 
 const ReservationForm = () => {
   const [formData, setFormData] = useState({
@@ -21,6 +22,7 @@ const ReservationForm = () => {
   const [formSending, setFormSending] = useState(false);
   const [exitSchedule, setExitSchedule] = useState(null);
   const [failedSchedule, setFailedSchedule] = useState(null);
+  const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -34,34 +36,51 @@ const ReservationForm = () => {
     setExitSchedule(false);
     setFailedSchedule(false);
 
-    axios
-      .post(`${API}/reservations/schedule`, formData)
-      .then((res) => {
-        if (res.status === 201) {
-          setExitSchedule(true);
-          setTimeout(() => {
-            navigation("/");
-          }, 3000);
-        }
-      })
-      .catch((e) => {
-        console.error(e);
-        setExitSchedule(false);
-        setFailedSchedule(true);
-        setFormData({
-          name: "",
-          surname: "",
-          phone: "",
-          num_comensales: "",
-          date: "",
-          time: "",
-        });
-      })
-      .finally(() => {
-        setTimeout(() => {
+    console.log(e.target.date.value);
+
+    const validations = reservationsFormValidator(formData);
+
+    if (Object.keys(validations).length > 0) {
+      setErrors(validations);
+      setFailedSchedule(true);
+      setFormSending(false);
+      return;
+    } else {
+      axios
+        .post(`${API}/reservations/schedule`, {
+          ...formData,
+          num_comensales: Number(formData.num_comensales),
+        })
+        .then((res) => {
+          if (res.status === 201) {
+            setTimeout(() => {
+              setExitSchedule(true);
+            }, 2000);
+            setTimeout(() => {
+              navigation("/");
+            }, 4000);
+          }
+        })
+        .catch((e) => {
+          console.error(e);
+          setExitSchedule(false);
+          setFailedSchedule(true);
+          setFormData({
+            name: "",
+            surname: "",
+            phone: "",
+            num_comensales: "",
+            date: "",
+            time: "",
+          });
           setFormSending(false);
-        }, 3000);
-      });
+        })
+        .finally(() => {
+          setTimeout(() => {
+            setFormSending(false);
+          }, 2000);
+        });
+    }
   };
 
   return (
@@ -92,6 +111,7 @@ const ReservationForm = () => {
             <h3>Completa los siguientes datos</h3>
             <div className="reservationForm__field">
               <label htmlFor="name">Nombre</label>
+              {errors.name && <p>{errors.name}</p>}
               <input
                 type="text"
                 name="name"
@@ -101,6 +121,7 @@ const ReservationForm = () => {
             </div>
             <div className="reservationForm__field">
               <label htmlFor="surname">Apellido</label>
+              {errors.surname && <p>{errors.surname}</p>}
               <input
                 type="text"
                 name="surname"
@@ -110,6 +131,7 @@ const ReservationForm = () => {
             </div>
             <div className="reservationForm__field">
               <label htmlFor="phone">Telefono</label>
+              {errors.phone && <p>{errors.phone}</p>}
               <input
                 type="text"
                 name="phone"
@@ -119,6 +141,7 @@ const ReservationForm = () => {
             </div>
             <div className="reservationForm__field">
               <label htmlFor="num_comensales">Cantidad de personas</label>
+              {errors.num_comensales && <p>{errors.num_comensales}</p>}
               <input
                 type="number"
                 name="num_comensales"
@@ -128,6 +151,7 @@ const ReservationForm = () => {
             </div>
             <div className="reservationForm__field">
               <label htmlFor="date">Dia</label>
+              {errors.date && <p>{errors.date}</p>}
               <input
                 type="date"
                 name="date"
@@ -137,6 +161,7 @@ const ReservationForm = () => {
             </div>
             <div className="reservationForm__field">
               <label htmlFor="time">Hora</label>
+              {errors.time && <p>{errors.time}</p>}
               <input
                 type="time"
                 name="time"
