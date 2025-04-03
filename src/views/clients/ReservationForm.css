@@ -65,7 +65,8 @@
   color: rgb(245, 19, 53);
 }
 
-.reservationForm__field input {
+.reservationForm__field input,
+.reservationForm__field textarea {
   padding: 5px 10px;
   border: none;
   border-bottom: 1px solid rgb(128, 0, 255);
@@ -73,6 +74,22 @@
   background-color: pink;
   font-weight: bolder;
   transition: all 0.4s ease;
+}
+
+.reservationForm__field select {
+  padding: 5px 10px;
+  border: none;
+  border-bottom: 1px solid rgb(128, 0, 255);
+  outline: none;
+  background-color: pink;
+  font-weight: bolder;
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.reservationForm__field select:focus {
+  border-bottom: 2px solid rgb(128, 0, 255);
+  background-color: rgb(255, 182, 193);
 }
 
 .reservationForm__field input:hover {
@@ -83,7 +100,8 @@
   border: 1px solid purple;
 }
 
-#reservationButton {
+#reservationButton,
+#sendContactFormButton {
   margin-top: 10px;
   background-color: pink;
   color: red;
@@ -96,7 +114,7 @@
   transition: background-color 0.3s ease;
 }
 
-#reservationButton:hover {
+#reservationButton:hover,
+#sendContactFormButton:hover {
   background-color: rgb(255, 161, 177);
 }
-

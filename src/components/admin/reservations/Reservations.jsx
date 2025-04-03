@@ -5,6 +5,7 @@ import axios from "axios";
 import Footer from "../../footer/Footer";
 import { AdminContext } from "../../../context/AdminContext";
 import { useNavigate } from "react-router-dom";
+import AdminNavbar from "../adminNavbar/AdminNavbar";
 
 const Reservations = () => {
   const [reservations, setReservations] = useState([]);
@@ -88,6 +89,7 @@ const Reservations = () => {
 
   return (
     <>
+      <AdminNavbar />
       <div className="reservationsDashboardContainer">
         <h2>Todas las reservas agendadas</h2>
         <div className="reservationsDashboardContainer__filters">

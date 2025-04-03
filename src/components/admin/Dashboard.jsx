@@ -1,9 +1,10 @@
+import "./Dashboard.css";
 import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { AdminContext } from "../../context/AdminContext";
 import Footer from "../footer/Footer";
 import { useNavigate } from "react-router-dom";
-import "./Dashboard.css";
+import AdminNavbar from "../admin/adminNavbar/AdminNavbar";
 
 const Dashboard = () => {
   const { adminData, setAdminData } = useContext(AdminContext);
@@ -22,6 +23,7 @@ const Dashboard = () => {
 
   return (
     <>
+      <AdminNavbar />
       <div className="container">
         <h2>Mi dashboard</h2>
         <button id="editProfileButton">Editar perfil</button>
@@ -52,6 +54,9 @@ const Dashboard = () => {
             <h3>Administar reservas</h3>
             <Link id="allReservationsButton" to="/reservations">
               VER TODAS LAS RESERVAS
+            </Link>
+            <Link id="allContactsButton" to="/all-contacts">
+              CONTACTOS DE CLIENTES
             </Link>
             <img
               src={adminData.imgProfile}

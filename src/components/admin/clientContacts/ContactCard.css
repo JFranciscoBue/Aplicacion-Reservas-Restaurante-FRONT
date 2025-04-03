@@ -1,0 +1,41 @@
+.contactsTableContainer {
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+  background: lightcoral;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.contactsTableContainer h2 {
+  margin-bottom: 20px;
+  color: black;
+}
+
+.contactsTableContainer table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.contactsTableContainer thead {
+  background: rgb(252, 103, 49);
+  color: black;
+}
+
+.contactsTableContainer table > td,
+.contactsTableContainer table > th {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.contactsTableContainer tbody tr {
+  background-color: rgb(250, 116, 67);
+}
+
+.contactsTableContainer tbody tr:hover {
+  background-color: rgb(233, 96, 47);
+}

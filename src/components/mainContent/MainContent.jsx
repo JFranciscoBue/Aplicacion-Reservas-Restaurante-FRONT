@@ -203,6 +203,13 @@ const MainContent = () => {
             <i class="bx bxs-hand-right"></i>
             <p>¡Reserva tu mesa ahora y vive una experiencia inolvidable!</p>
           </Link>
+          <Link to="contact-us" id="contactUsButton">
+            <i class="bx bx-message-alt-detail"></i>
+            <p>
+              ¿Necesitas modificar o cancelar una reserva? No dudes en
+              contactarnos!
+            </p>
+          </Link>
         </div>
       </div>
     </main>

@@ -7,6 +7,7 @@
 
 #editProfileButton,
 #allReservationsButton,
+#allContactsButton,
 #LogOutButton {
   margin: 10px;
   padding: 6px;
@@ -18,13 +19,14 @@
   transition: all 0.3s ease;
 }
 
-#allReservationsButton {
+#allReservationsButton,
+#allContactsButton {
   color: black;
 }
 
 #editProfileButton:hover,
 #allReservationsButton:hover,
-#LogOutButton:hover {
+#allContactsButton:hover #LogOutButton:hover {
   background-color: rgb(255, 0, 0);
 }
 

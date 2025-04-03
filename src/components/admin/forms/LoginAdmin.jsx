@@ -1,10 +1,12 @@
+import "./Forms.css";
 import React, { useContext } from "react";
 import { useState, useEffect } from "react";
 import { AdminContext } from "../../../context/AdminContext";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import formValidation from "../../../helpers/forms/adminLogin";
-import "./Forms.css";
+import AdminNavbar from "../adminNavbar/AdminNavbar";
+import Footer from "../../footer/Footer";
 
 const LoginAdmin = () => {
   const [formData, setFormData] = useState({
@@ -62,42 +64,46 @@ const LoginAdmin = () => {
   };
 
   return (
-    <form onSubmit={formSubmit} className="form">
-      <h2>Acceder</h2>
-      {validCreds && <p>Dni o Clave Incorrectos</p>}
-      <p>Entra a tu dashboard</p>
-      <div className="form__field loginInput">
-        <label htmlFor="dni">
-          {errors.dni && (
-            <p className="errorMessage">El DNI debe ser de 8 digitos</p>
-          )}
-        </label>
-        <input
-          type="text"
-          name="dni"
-          value={formData.dni}
-          onChange={inputChange}
-          placeholder="DNI"
-        />
-      </div>
-      <div className="form__field loginInput">
-        <label htmlFor="dni">
-          {errors.key && (
-            <p className="errorMessage">Por favor ingresa la clave</p>
-          )}
-        </label>
-        <input
-          type="password"
-          name="key"
-          value={formData.key}
-          onChange={inputChange}
-          placeholder="PIN"
-        />
-      </div>
-      <div className="form__field">
-        <input type="submit" value="Acceder" />
-      </div>
-    </form>
+    <>
+      <AdminNavbar />
+      <form onSubmit={formSubmit} className="form">
+        <h2>Acceder</h2>
+        {validCreds && <p>Dni o Clave Incorrectos</p>}
+        <p>Entra a tu dashboard</p>
+        <div className="form__field loginInput">
+          <label htmlFor="dni">
+            {errors.dni && (
+              <p className="errorMessage">El DNI debe ser de 8 digitos</p>
+            )}
+          </label>
+          <input
+            type="text"
+            name="dni"
+            value={formData.dni}
+            onChange={inputChange}
+            placeholder="DNI"
+          />
+        </div>
+        <div className="form__field loginInput">
+          <label htmlFor="dni">
+            {errors.key && (
+              <p className="errorMessage">Por favor ingresa la clave</p>
+            )}
+          </label>
+          <input
+            type="password"
+            name="key"
+            value={formData.key}
+            onChange={inputChange}
+            placeholder="PIN"
+          />
+        </div>
+        <div className="form__field">
+          <input type="submit" value="Acceder" />
+        </div>
+      </form>
+      <Footer />
+    </>
   );
 };
 
