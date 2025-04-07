@@ -52,7 +52,7 @@ const Reservations = () => {
 
     axios
       .patch(`${API}/reservations/finished/${id}`)
-      .then((res) => {
+      .then(() => {
         setNewStatusExist(true);
       })
       .catch((e) => console.error(e))
@@ -68,7 +68,7 @@ const Reservations = () => {
 
     axios
       .patch(`${API}/reservations/cancel/${id}`)
-      .then((res) => {
+      .then(() => {
         setNewStatusExist(true);
       })
       .catch((e) => console.error(e))

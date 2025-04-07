@@ -5,7 +5,6 @@ import { AdminContext } from "../../../context/AdminContext";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import formValidation from "../../../helpers/forms/adminLogin";
-import AdminNavbar from "../adminNavbar/AdminNavbar";
 import Footer from "../../footer/Footer";
 
 const LoginAdmin = () => {
@@ -15,7 +14,7 @@ const LoginAdmin = () => {
   });
 
   const [errors, setErrors] = useState({});
-  const [validCreds, setValidCreds] = useState("");
+  const [validCreds, setValidCreds] = useState(false);
 
   const API = "http://localhost:3000";
 
@@ -57,15 +56,14 @@ const LoginAdmin = () => {
             setAdminData(res.data.adminFound);
           }
         })
-        .catch((e) => {
-          setValidCreds(e.response.data.message);
+        .catch(() => {
+          setValidCreds(true);
         });
     }
   };
 
   return (
     <>
-      <AdminNavbar />
       <form onSubmit={formSubmit} className="form">
         <h2>Acceder</h2>
         {validCreds && <p>Dni o Clave Incorrectos</p>}

@@ -1,41 +1,58 @@
 .contactsTableContainer {
   width: 100%;
-  max-width: 900px;
-  margin: auto;
-  background: lightcoral;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
 }
 
-.contactsTableContainer h2 {
-  margin-bottom: 20px;
-  color: black;
-}
-
-.contactsTableContainer table {
-  width: 100%;
+table {
+  width: 90%;
   border-collapse: collapse;
-  margin-top: 10px;
+  text-align: left;
+  table-layout: fixed;
 }
 
-.contactsTableContainer thead {
-  background: rgb(252, 103, 49);
-  color: black;
-}
-
-.contactsTableContainer table > td,
-.contactsTableContainer table > th {
+th,
+td {
   padding: 12px;
-  border: 1px solid #ddd;
-  text-align: center;
+  border: 2px solid orange;
+  text-align: left;
 }
 
-.contactsTableContainer tbody tr {
-  background-color: rgb(250, 116, 67);
+th {
+  font-weight: bold;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 
-.contactsTableContainer tbody tr:hover {
-  background-color: rgb(233, 96, 47);
+td {
+  word-wrap: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+th:nth-child(1),
+td:nth-child(1) {
+  width: 15%;
+}
+th:nth-child(2),
+td:nth-child(2) {
+  width: 20%;
+}
+th:nth-child(3),
+td:nth-child(3) {
+  width: 15%;
+}
+th:nth-child(4),
+td:nth-child(4) {
+  width: 40%;
+}
+th:nth-child(5),
+td:nth-child(5) {
+  width: 10%;
 }

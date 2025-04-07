@@ -6,7 +6,7 @@
 }
 
 .reservationForm-container h2 {
-  font-size: 45px;
+  font-size: 40px;
   color: black;
   font-weight: bolder;
   padding-bottom: 3px;
@@ -101,7 +101,8 @@
 }
 
 #reservationButton,
-#sendContactFormButton {
+#sendContactFormButton,
+#backButton {
   margin-top: 10px;
   background-color: pink;
   color: red;
@@ -115,6 +116,7 @@
 }
 
 #reservationButton:hover,
-#sendContactFormButton:hover {
+#sendContactFormButton:hover,
+#backButton:hover {
   background-color: rgb(255, 161, 177);
 }

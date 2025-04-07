@@ -2,7 +2,7 @@ import "./ReservationForm.css";
 import React, { useState } from "react";
 import Footer from "../../components/footer/Footer";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import reservationsFormValidator from "../../helpers/forms/reservation";
 
 const ReservationForm = () => {
@@ -87,6 +87,9 @@ const ReservationForm = () => {
     <>
       <div className="reservationForm-container">
         <div className="reservationForm-container__head">
+          <Link to="/" id="backButton">
+            VOLVER
+          </Link>
           <img
             src="https://cdn-icons-png.flaticon.com/512/1996/1996055.png"
             alt=""
